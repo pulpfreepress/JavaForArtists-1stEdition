@@ -1,0 +1,34 @@
+/*****************************************************************  Copyright 2006 Rick Miller, Raffi Kasparian - Pulp Free Press         This source code accompanies the text Java For Artists and is
+   provided for instructional purposes only. No warranty concerning
+   the quality of this code is expressed or implied. You are free to 
+   use this code in your programs so long as this copyright notice
+   is included in its entirety.*****************************************************************/
+
+The legacy data file contains three sections:
+
+1) The file identification section is a two-byte value that identifies the file as a data file.
+
+2) The schema description section immediately follows the first section and contains the field text name and two-byte field length for each field in the data section.
+
+3) The data section contains fixed-field-length record data elements arranged according to the following schema:
+
+   Field Name      Length     Description
+   --------------|---------|----------------------------------------------------
+   deleted       |    1    |  numeric - 0 if valid, 1 if deleted
+   --------------|---------|----------------------------------------------------
+   title         |   50    |  text - book title
+   --------------|---------|----------------------------------------------------
+   author        |   50    |  text - author full name
+   --------------|---------|----------------------------------------------------
+   pub_code      |    4    |  numeric - publisher code
+   --------------|---------|----------------------------------------------------
+   ISBN          |   13    |  text - International Standard Book Number
+   --------------|---------|----------------------------------------------------
+   price         |    8    |  text - retail price in following format: $nnnn.nn
+   --------------|---------|----------------------------------------------------
+   qoh           |    4    |  numeric - quantity on hand
+   --------------|---------|----------------------------------------------------
+   
+
+
+Note: All text is written to the file as 8-bit ASCII. Numeric values are written as Java primitive types.
